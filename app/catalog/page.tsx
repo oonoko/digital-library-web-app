@@ -185,7 +185,7 @@ export default function CatalogPage() {
                 {loading ? (
                   <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                     {Array.from({ length: 8 }).map((_, i) => (
-                      <div key={i} className="glass-card rounded-2xl overflow-hidden animate-pulse">
+                      <div key={i} className="rounded-2xl overflow-hidden animate-pulse border border-border/50">
                         <div className="aspect-[3/4] bg-muted" />
                         <div className="p-4 space-y-2">
                           <div className="h-4 bg-muted rounded w-3/4" />
@@ -204,7 +204,7 @@ export default function CatalogPage() {
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                       >
                         <Link href={`/book/${book.id}`}>
-                          <div className="group glass-card rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                          <div className="group rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-border/50">
                             <div className="relative aspect-[3/4] overflow-hidden">
                               <Image
                                 src={book.cover || "/placeholder.jpg"}
