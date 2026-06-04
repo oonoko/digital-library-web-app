@@ -110,7 +110,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16"
+            className="grid grid-cols-3 gap-4 md:gap-8 mt-16 max-w-2xl mx-auto"
           >
             {[
               { icon: BookOpen, label: "18 Ном", desc: "Төрөл бүрийн" },
