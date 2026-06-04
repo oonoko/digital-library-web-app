@@ -4,6 +4,8 @@ import path from "path"
 import fs from "fs"
 import JSZip from "jszip"
 
+export const dynamic = "force-dynamic"
+
 // GET /api/books/[id]/epub?chapter=0&meta=1
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
