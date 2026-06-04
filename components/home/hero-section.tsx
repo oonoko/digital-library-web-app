@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { BookOpen, Library, Sparkles, QrCode, ArrowRight } from "lucide-react"
+import { BookOpen, Library, QrCode, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -115,7 +115,6 @@ export function HeroSection() {
             {[
               { icon: BookOpen, label: "18 Ном", desc: "Төрөл бүрийн" },
               { icon: QrCode, label: "QR Хандалт", desc: "Шууд уншина" },
-              { icon: Sparkles, label: "AI Санал", desc: "Ухаалаг систем" },
               { icon: Library, label: "6 Ангилал", desc: "Олон сонголт" },
             ].map((feature, index) => (
               <div
