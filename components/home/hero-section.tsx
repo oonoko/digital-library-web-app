@@ -113,10 +113,10 @@ export function HeroSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16"
           >
             {[
-              { icon: BookOpen, label: "500+ Ном", desc: "Төрөл бүрийн" },
+              { icon: BookOpen, label: "18 Ном", desc: "Төрөл бүрийн" },
               { icon: QrCode, label: "QR Хандалт", desc: "Шууд уншина" },
               { icon: Sparkles, label: "AI Санал", desc: "Ухаалаг систем" },
-              { icon: Library, label: "8 Ангилал", desc: "Олон сонголт" },
+              { icon: Library, label: "6 Ангилал", desc: "Олон сонголт" },
             ].map((feature, index) => (
               <div
                 key={index}
