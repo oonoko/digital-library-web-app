@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
 export const dynamic = "force-dynamic"
+export const runtime = "nodejs"
 
 // GET /api/books?category=fiction&search=монгол
 export async function GET(req: NextRequest) {

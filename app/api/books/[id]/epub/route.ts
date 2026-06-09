@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 import path from "path"
 import fs from "fs"
-import JSZip from "jszip"
 
 export const dynamic = "force-dynamic"
+export const runtime = "nodejs"
 
 // GET /api/books/[id]/epub?chapter=0&meta=1
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -28,6 +28,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     }
 
     const data = fs.readFileSync(epubAbsPath)
+    const { default: JSZip } = await import("jszip")
     const zip = await JSZip.loadAsync(data)
 
     // container.xml -с OPF файлын замыг авах
