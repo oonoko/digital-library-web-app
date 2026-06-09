@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
 import path from "path"
 import fs from "fs"
 
@@ -14,6 +13,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     const chapterIndex = parseInt(searchParams.get("chapter") || "0")
     const metaOnly = searchParams.get("meta") === "1"
 
+    const { prisma } = await import("@/lib/prisma")
     const book = await prisma.book.findUnique({ where: { id } })
     if (!book) return NextResponse.json({ error: "Ном олдсонгүй" }, { status: 404 })
 
