@@ -27,8 +27,9 @@ export async function GET(req: NextRequest) {
       orderBy: { createdAt: "desc" },
     })
     return NextResponse.json(books)
-  } catch {
-    return NextResponse.json({ error: "Номнуудыг авахад алдаа гарлаа" }, { status: 500 })
+  } catch (e) {
+    console.error("GET /api/books error:", e)
+    return NextResponse.json({ error: "Номнуудыг авахад алдаа гарлаа", detail: String(e) }, { status: 500 })
   }
 }
 
