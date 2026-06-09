@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo, useEffect, Suspense } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -24,6 +24,14 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function CatalogPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><BookOpen className="h-8 w-8 animate-pulse text-[#0E4AA8]" /></div>}>
+      <CatalogContent />
+    </Suspense>
+  )
+}
+
+function CatalogContent() {
   const searchParams = useSearchParams()
   const initialCategory = searchParams.get("category") || ""
 
